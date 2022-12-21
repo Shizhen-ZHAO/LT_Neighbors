@@ -1,0 +1,6 @@
+@inproceedings{zhao2022fs3d,
+  title={Prototypical VoteNet for Few-Shot 3D Point Cloud Object Detection},
+  author={Zhao, Shizhen and Qi, Xiaojuan},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2022}
+}
