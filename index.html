@@ -119,9 +119,9 @@
 
 <html>
 <head>
-	<title>Prototypical VoteNet for Few-Shot 3D Point Cloud Object Detection</title>
+	<title>Learning from Neighbors: Category Extrapolation for Long-Tail Learning</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="Prototypical VoteNet for Few-Shot 3D Point Cloud Object Detection." />
+	<meta property="og:title" content="Learning from Neighbors: Category Extrapolation for Long-Tail Learning." />
 	<meta property="og:description" content="Paper description." />
 
 	<!-- Get from Google Analytics -->
@@ -139,13 +139,33 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">Prototypical VoteNet for Few-Shot 3D Point Cloud Object Detection</span>
+		<span style="font-size:36px">Learning from Neighbors: Category Extrapolation for Long-Tail Learning</span>
 		<table align=center width=600px>
 			<table align=center width=600px>
 				<tr>
 					<td align=center width=100px>
 						<center>
 							<span style="font-size:24px"><a href=''>Shizhen Zhao</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href=''>Xin Wen</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href=''>Jiahui Liu</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href=''>Chuofan Ma</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href=''>Chunfeng Yuan</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
@@ -159,12 +179,12 @@
 				<tr>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://arxiv.org/pdf/2210.05593.pdf'>[Paper]</a></span>
+							<span style="font-size:24px"><a href='https://arxiv.org/pdf/2410.15980'>[Paper]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/Shizhen-ZHAO/FS3D'>[GitHub]</a></span><br>
+							<span style="font-size:24px"><a href='https://github.com/Shizhen-ZHAO/Gran_LT'>[GitHub]</a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -178,7 +198,7 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				Most existing 3D point cloud object detection approaches heavily rely on large amounts of labeled training data. However, the labeling process is costly and time-consuming. This paper considers few-shot 3D point cloud object detection, where only a few annotated samples of novel classes are needed with abundant samples of base classes. To this end, we propose Prototypical VoteNet to recognize and localize novel instances, which incorporates two new modules: Prototypical Vote Module (PVM) and Prototypical Head Module (PHM). Specifically, as the 3D basic geometric structures can be shared among categories, PVM is designed to leverage class-agnostic geometric prototypes, which are learned from base classes, to refine local features of novel categories. Then PHM is proposed to utilize class prototypes to enhance the global feature of each object, facilitating subsequent object localization and classification, which is trained by the episodic training strategy. To evaluate the model in this new setting, we contribute two new benchmark datasets, FS-ScanNet and FS-SUNRGBD. We conduct extensive experiments to demonstrate the effectiveness of Prototypical VoteNet, and our proposed method shows significant and consistent improvements compared to baselines on two benchmark datasets.
+				Balancing training on long-tail data distributions remains a long-standing challenge in deep learning. While methods such as re-weighting and re-sampling help alleviate the imbalance issue, limited sample diversity continues to hinder models from learning robust and generalizable feature representations, particularly for tail classes. In contrast to existing methods, we offer a novel perspective on long-tail learning, inspired by an observation: datasets with finer granularity tend to be less affected by data imbalance. In this paper, we investigate this phenomenon through both quantitative and qualitative studies, showing that increased granularity enhances the generalization of learned features in tail categories. Motivated by these findings, we propose a method to increase dataset granularity through category extrapolation. Specifically, we introduce open-set auxiliary classes that are visually similar to existing ones, aiming to enhance representation learning for both head and tail classes. This forms the core contribution and insight of our approach. To automate the curation of auxiliary data, we leverage large language models (LLMs) as knowledge bases to search for auxiliary categories and retrieve relevant images through web crawling. To prevent the overwhelming presence of auxiliary classes from disrupting training, we introduce a neighbor-silencing loss that encourages the model to focus on class discrimination within the target dataset. During inference, the classifier weights for auxiliary categories are masked out, leaving only the target class weights for use. Extensive experiments and ablation studies on three standard long-tail benchmarks demonstrate the effectiveness of our approach, notably outperforming strong baseline methods that use the same amount of data. 
 			</td>
 		</tr>
 	</table>
@@ -199,7 +219,7 @@
 		<tr>
 			<td align=center width=400px>
 				<center>
-					<td><img class="round" style="width:700px" src="./resources/method.png"/></td>
+					<td><img class="round" style="width:700px" src="./resources/motivation.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -207,7 +227,7 @@
 	<table align=center width=800px>
 		<br>
 		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/CVMI-Lab/FS3D'>[GitHub]</a>
+			<span style="font-size:28px">&nbsp;<a href='https://github.com/Shizhen-ZHAO/Gran_LT'>[GitHub]</a>
 			</center>
 		</span>
 	</table>
@@ -216,11 +236,11 @@
 	<table align=center width=450px>
 		<center><h1>Paper and Supplementary Material</h1></center>
 		<tr>
-			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper_v1.png"/></a></td>
-			<td><span style="font-size:14pt">Zhao,Shizhen and Qi, Xiaojuan.<br>
-				<b>Prototypical VoteNet for Few-Shot 3D Point Cloud Object Detection.</b><br>
-				In Advances in Neural Information Processing Systems, 2022.<br>
-				(hosted on <a href="https://arxiv.org/pdf/2210.05593.pdf">ArXiv</a>)<br>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+			<td><span style="font-size:14pt">Zhao, Shizhen and Wen, Xin and Liu, Jiahui and Ma, Chuofan and Yuan, Chunfeng and Qi, Xiaojuan.<br>
+				<b>Learning from Neighbors: Category Extrapolation for Long-Tail Learning.</b><br>
+				In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.<br>
+				(hosted on <a href="https://arxiv.org/pdf/2410.15980">ArXiv</a>)<br>
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:4pt"><a href=""><br></a>
 				</span>
@@ -245,7 +265,7 @@
 			<td width=400px>
 				<left>
 					<center><h1>Acknowledgements</h1></center>
-					This work has been supported by Hong Kong Research Grant Council - Early Career Scheme (Grant No. 27209621), HKU Startup Fund, and HKU Seed Fund for Basic Research. Part of the described research work is conducted in the JC STEM Lab of Robotics for Soft Materials funded by The Hong Kong Jockey Club Charities Trust.
+					This work has been supported in part by Hong Kong Research Grant Council - Early Career Scheme (Grant No.27209621), General Research Fund Scheme (Grant No.1720242217212923), Theme-based Research (Grant No.T45-701/22-R) and Shenzhen Science and Technology Innovation Commission (SGDX20220530111405040). Part of the described research work is conducted in the JC STEM Lab of Robotics for Soft Materials funded by The Hong Kong Jockey Club Charities Trust.
 				</left>
 			</td>
 		</tr>
