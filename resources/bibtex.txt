@@ -1,6 +1,8 @@
-@inproceedings{zhao2022fs3d,
-  title={Prototypical VoteNet for Few-Shot 3D Point Cloud Object Detection},
-  author={Zhao, Shizhen and Qi, Xiaojuan},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2022}
+@InProceedings{Zhao_2025_CVPR,
+    author    = {Zhao, Shizhen and Wen, Xin and Liu, Jiahui and Ma, Chuofan and Yuan, Chunfeng and Qi, Xiaojuan},
+    title     = {Learning from Neighbors: Category Extrapolation for Long-Tail Learning},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {30483-30492}
 }
